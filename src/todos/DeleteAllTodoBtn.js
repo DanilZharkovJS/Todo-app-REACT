@@ -11,9 +11,8 @@ function DeleteTodoBtn({ todos, setTodos }) {
       setTodos([])
     }
   }
-
+  const updatedTodos = todos.filter((todo) => todo.isTodo === true)
   const handleClickDone = () => {
-    const updatedTodos = todos.filter((todo) => todo.isTodo === true)
     setTodos(updatedTodos)
   }
 
@@ -22,7 +21,7 @@ function DeleteTodoBtn({ todos, setTodos }) {
       <button onClick={handleClickAll} className="todo_del_all">
         <MdDeleteForever className="todo_del_all_icon" /> Delete All
       </button>
-      <button onClick={handleClickDone} className="todo_del_done">
+      <button onClick={handleClickDone} className="todo_del_done" >
         <FaCheck /> Delete completed
       </button>
     </div>
